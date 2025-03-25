@@ -27,7 +27,7 @@ class BinarySearchTree:
         
         current = self.root
         while True:
-            if key < current.key:
+            if key <= current.key:
                 if current.left is None:
                     current.left = new_node
                     break
@@ -44,7 +44,7 @@ class BinarySearchTree:
             print("Case #1: Pivot not detected")
             
         elif pivot.balance > 0:
-            if new_node.key < pivot.key:
+            if new_node.key <= pivot.key:
                 print("Case #2: A pivot exists, and a node was added to the shorter subtree")
             else:
                 if new_node.key > pivot.right.key:
@@ -58,7 +58,7 @@ class BinarySearchTree:
             if new_node.key > pivot.key:
                 print("Case #2: A pivot exists, and a node was added to the shorter subtree")
             else:
-                if new_node.key < pivot.left.key:
+                if new_node.key <= pivot.left.key:
                     print("Case #3a: adding a node to an outside subtree")
                     self._right_rotate(pivot)
                 else:
@@ -74,7 +74,7 @@ class BinarySearchTree:
         while current is not new_node:
             if current.balance != 0:
                 pivot = current
-            if new_node.key < current.key:
+            if new_node.key <= current.key:
                 current = current.left
             else:
                 current = current.right
@@ -107,7 +107,7 @@ class BinarySearchTree:
             self.root = grandson
         else:
             ancestor = self.find_ancestor(pivot)
-            if pivot.key < ancestor.key:
+            if pivot.key <= ancestor.key:
                 ancestor.left = grandson
             else:
                 ancestor.right = grandson
@@ -135,7 +135,7 @@ class BinarySearchTree:
         
         while current is not pivot:
             ancestor = current
-            if pivot.key < current.key:
+            if pivot.key <= current.key:
                 current = current.left
             else:
                 current = current.right

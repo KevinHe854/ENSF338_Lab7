@@ -27,7 +27,7 @@ class BinarySearchTree:
         
         current = self.root
         while True:
-            if key < current.key:
+            if key <= current.key:
                 if current.left is None:
                     current.left = new_node
                     break
@@ -43,7 +43,7 @@ class BinarySearchTree:
         if pivot is None:
             print("Case #1: Pivot not detected")
         elif pivot.balance > 0:
-            if new_node.key < pivot.key:
+            if new_node.key <= pivot.key:
                 print("Case #2: A pivot exists, and a node was added to the shorter subtree")
             else:
                 print("Case 3 not supported")
