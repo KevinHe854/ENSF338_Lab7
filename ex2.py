@@ -111,13 +111,11 @@ class BinarySearchTree:
 def main():
     # Test
     tree = BinarySearchTree()
-    tree.insert(5) # Root node
-    tree.insert(3) # Should return case 1
-    tree.insert(8) # Should return case 2
-    tree.insert(2) # Should return case 1
-    tree.insert(7) # Should return case 2
-    tree.insert(4) # Should return case 2
-    tree.insert(6) # Should return case 3
+    tree.insert(12) # Root node
+    tree.insert(6)  # Should return case 1
+    tree.insert(17) # Should return case 2
+    tree.insert(8)  # Should return case 1
+    tree.insert(10) # Should return case 3
 
 if __name__ == "__main__":
     main()
