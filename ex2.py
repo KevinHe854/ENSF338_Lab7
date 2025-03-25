@@ -42,19 +42,18 @@ class BinarySearchTree:
         
         if pivot is None:
             print("Case #1: Pivot not detected")
-            self.calculate_balance()
-        elif pivot.balance == 1:
+        elif pivot.balance > 0:
             if new_node.key < pivot.key:
                 print("Case #2: A pivot exists, and a node was added to the shorter subtree")
-                self.calculate_balance()
             else:
                 print("Case 3 not supported")
         else:
             if new_node.key > pivot.key:
                 print("Case #2: A pivot exists, and a node was added to the shorter subtree")
-                self.calculate_balance()
             else:
                 print("Case 3 not supported")
+
+        self.calculate_balance()
             
     
     def find_pivot(self, new_node):
